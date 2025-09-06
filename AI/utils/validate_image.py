@@ -99,7 +99,6 @@ def validate_and_fix_csv(csv_path):
         cleaned_url = clean_url(original_url)
         
         if not cleaned_url:
-            # No valid URL format, use YOUR fallback
             df.at[index, 'Images'] = FALLBACK_IMAGE
             fixed_count += 1
             print(f"Row {index}: {recipe_name[:40]:<40} | NO URL -> FIXED")
