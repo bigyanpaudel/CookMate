@@ -16,6 +16,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from utils.ai_recommender import RecipeRecommender
 
+
 # ---- App setup ----
 app = FastAPI(title="CookMate API")
 app.add_middleware(
@@ -25,6 +26,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 # ---- Globals ----
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -109,7 +111,7 @@ def apply_dietary_filters(df, dietary_prefs=None, allergies=None):
     
     return filtered_df
 
-# ---- Utils ----
+# ---- Utils ------
 def clean_json(obj):
     """Recursively replace NaN/inf with None so JSON is safe."""
     if isinstance(obj, dict):
